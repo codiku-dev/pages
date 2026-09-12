@@ -1,0 +1,486 @@
+{
+  "schema": "ai-cost/session-usage/v1",
+  "generated_at": "2026-09-12T08:55:00Z",
+  "access": "full",
+  "access_notes": "Donnees lues dans la base SQLite locale state.db (tables sessions, session_model_usage, messages) sous ~/.hermes. Corpus = toutes les sessions facturees par deepinfra (provider indique dans la DB). Cout 'actual_cost_usd' toujours NULL -> pas de facture disponible ; seul cout estime stocke (cost_status=estimated, source=provider_models_api).",
+  "reporter": {
+    "tool": "Hermes Agent",
+    "tool_version": null,
+    "model_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+    "provider": "deepinfra",
+    "billing_route": "api_directe",
+    "harness_notes": "Le rapporteur tourne actuellement sur DeepSeek-V4-Flash-0731 via deepinfra. Le corpus rapporte melange plusieurs modeles deepinfra (le modele du rapporteur est dominant). Pas de sous-agents detectes dans cette base (orchestration inapplicable)."
+  },
+  "corpus": {
+    "sessions": 108,
+    "period_from": "2026-07-22T18:25:22Z",
+    "period_to": "2026-09-12T08:51:49Z",
+    "how_measured": "Agregation SQL sur la table sessions filtree billing_provider=deepinfra (source unique par session, deja dedupliquee). session_model_usage contient 213 lignes pour 108 sessions (cle multi-modele/provider/task) : on utilise les agregaats par session pour eviter le double comptage.",
+    "traps_handled": {
+      "dedup_two_keys": true,
+      "max_per_field": false,
+      "output_floor_checked": true,
+      "cache_write_not_free": true,
+      "cache_ttl_split": false,
+      "machine_wakeups_separated": false,
+      "sampling_unbiased": true,
+      "orchestration_counted": false
+    }
+  },
+  "totals": {
+    "api_calls": 1998,
+    "tool_calls": 2257,
+    "wall_seconds": null,
+    "tokens": {
+      "input": 11988748,
+      "output": 422861,
+      "output_floor": 405225,
+      "cache_read": 80661411,
+      "cache_write": 0,
+      "cache_write_5m": null,
+      "cache_write_1h": null,
+      "thinking": 3404
+    }
+  },
+  "real_cost": {
+    "available": false,
+    "usd": null,
+    "method": null,
+    "covers_whole_corpus": null
+  },
+  "published_prices_usd_per_million": {
+    "input": 0.06,
+    "output": 0.18,
+    "cache_read": 0.015,
+    "cache_write": null,
+    "source": "Grille deepinfra locale (cache provider ~/.hermes/models_dev_cache.json, route deepinfra/deepseek-ai/DeepSeek-V4-Flash-0731)",
+    "read_on": "2026-09-12"
+  },
+  "tasks": [
+    {
+      "id": "20260727-_13541",
+      "family": "ops",
+      "label": "gestion de depot git et automatisation shell",
+      "cold_start": null,
+      "api_calls": 34,
+      "turns": null,
+      "wall_seconds": null,
+      "tokens": {
+        "input": 68938,
+        "output": 3980,
+        "output_floor": null,
+        "cache_read": 928768,
+        "cache_write": 0,
+        "thinking": 0
+      },
+      "tool_calls_by_kind": {
+        "read": 4,
+        "write": 3,
+        "shell": 15,
+        "browser": 0,
+        "search": 5,
+        "other": 5
+      },
+      "deliverable": {
+        "files": null,
+        "bytes": null,
+        "lines": null
+      },
+      "finished": "oui",
+      "stopped_by_limit": null,
+      "notes": ""
+    },
+    {
+      "id": "20260727-_14010",
+      "family": "other",
+      "label": "session courte de verification systeme",
+      "cold_start": null,
+      "api_calls": 4,
+      "turns": null,
+      "wall_seconds": null,
+      "tokens": {
+        "input": 22893,
+        "output": 417,
+        "output_floor": null,
+        "cache_read": 69376,
+        "cache_write": 0,
+        "thinking": 0
+      },
+      "tool_calls_by_kind": {
+        "read": 1,
+        "write": 0,
+        "shell": 3,
+        "browser": 0,
+        "search": 0,
+        "other": 1
+      },
+      "deliverable": {
+        "files": null,
+        "bytes": null,
+        "lines": null
+      },
+      "finished": "oui",
+      "stopped_by_limit": null,
+      "notes": ""
+    },
+    {
+      "id": "20260727-_14194",
+      "family": "build_site",
+      "label": "creer un projet web d'affichage",
+      "cold_start": null,
+      "api_calls": 20,
+      "turns": null,
+      "wall_seconds": null,
+      "tokens": {
+        "input": 58531,
+        "output": 2784,
+        "output_floor": null,
+        "cache_read": 456960,
+        "cache_write": 0,
+        "thinking": 0
+      },
+      "tool_calls_by_kind": {
+        "read": 3,
+        "write": 1,
+        "shell": 12,
+        "browser": 0,
+        "search": 0,
+        "other": 3
+      },
+      "deliverable": {
+        "files": null,
+        "bytes": null,
+        "lines": null
+      },
+      "finished": "oui",
+      "stopped_by_limit": null,
+      "notes": ""
+    },
+    {
+      "id": "20260728-_21190",
+      "family": "other",
+      "label": "session de travail systeme non identifiee",
+      "cold_start": null,
+      "api_calls": 14,
+      "turns": null,
+      "wall_seconds": null,
+      "tokens": {
+        "input": 132252,
+        "output": 1913,
+        "output_floor": null,
+        "cache_read": 333312,
+        "cache_write": 0,
+        "thinking": 0
+      },
+      "tool_calls_by_kind": {
+        "read": 1,
+        "write": 0,
+        "shell": 0,
+        "browser": 0,
+        "search": 0,
+        "other": 17
+      },
+      "deliverable": {
+        "files": null,
+        "bytes": null,
+        "lines": null
+      },
+      "finished": "oui",
+      "stopped_by_limit": null,
+      "notes": ""
+    },
+    {
+      "id": "20260728-_21300",
+      "family": "other",
+      "label": "session de travail systeme non identifiee",
+      "cold_start": null,
+      "api_calls": 14,
+      "turns": null,
+      "wall_seconds": null,
+      "tokens": {
+        "input": 36356,
+        "output": 1996,
+        "output_floor": null,
+        "cache_read": 399872,
+        "cache_write": 0,
+        "thinking": 0
+      },
+      "tool_calls_by_kind": {
+        "read": 1,
+        "write": 0,
+        "shell": 2,
+        "browser": 0,
+        "search": 0,
+        "other": 13
+      },
+      "deliverable": {
+        "files": null,
+        "bytes": null,
+        "lines": null
+      },
+      "finished": "oui",
+      "stopped_by_limit": null,
+      "notes": ""
+    },
+    {
+      "id": "20260728-_21344",
+      "family": "other",
+      "label": "session courte de recherche systeme",
+      "cold_start": null,
+      "api_calls": 3,
+      "turns": null,
+      "wall_seconds": null,
+      "tokens": {
+        "input": 3352,
+        "output": 385,
+        "output_floor": null,
+        "cache_read": 69120,
+        "cache_write": 0,
+        "thinking": 0
+      },
+      "tool_calls_by_kind": {
+        "read": 2,
+        "write": 0,
+        "shell": 0,
+        "browser": 0,
+        "search": 0,
+        "other": 5
+      },
+      "deliverable": {
+        "files": null,
+        "bytes": null,
+        "lines": null
+      },
+      "finished": "oui",
+      "stopped_by_limit": null,
+      "notes": ""
+    },
+    {
+      "id": "20260801-_14302",
+      "family": "build_site",
+      "label": "copier un site web existant pour un client",
+      "cold_start": null,
+      "api_calls": 24,
+      "turns": null,
+      "wall_seconds": null,
+      "tokens": {
+        "input": 175119,
+        "output": 9143,
+        "output_floor": null,
+        "cache_read": 1070592,
+        "cache_write": 0,
+        "thinking": 0
+      },
+      "tool_calls_by_kind": {
+        "read": 6,
+        "write": 0,
+        "shell": 5,
+        "browser": 0,
+        "search": 1,
+        "other": 32
+      },
+      "deliverable": {
+        "files": null,
+        "bytes": null,
+        "lines": null
+      },
+      "finished": "oui",
+      "stopped_by_limit": null,
+      "notes": ""
+    },
+    {
+      "id": "20260803-_15221",
+      "family": "other",
+      "label": "session de travail systeme non identifiee",
+      "cold_start": null,
+      "api_calls": 15,
+      "turns": null,
+      "wall_seconds": null,
+      "tokens": {
+        "input": 143828,
+        "output": 3348,
+        "output_floor": null,
+        "cache_read": 372736,
+        "cache_write": 0,
+        "thinking": 0
+      },
+      "tool_calls_by_kind": {
+        "read": 2,
+        "write": 0,
+        "shell": 7,
+        "browser": 0,
+        "search": 1,
+        "other": 6
+      },
+      "deliverable": {
+        "files": null,
+        "bytes": null,
+        "lines": null
+      },
+      "finished": "oui",
+      "stopped_by_limit": null,
+      "notes": ""
+    },
+    {
+      "id": "20260805-_14330",
+      "family": "research",
+      "label": "analyse technique comparative",
+      "cold_start": null,
+      "api_calls": 28,
+      "turns": null,
+      "wall_seconds": null,
+      "tokens": {
+        "input": 53457,
+        "output": 4667,
+        "output_floor": null,
+        "cache_read": 1134848,
+        "cache_write": 0,
+        "thinking": 0
+      },
+      "tool_calls_by_kind": {
+        "read": 5,
+        "write": 0,
+        "shell": 10,
+        "browser": 0,
+        "search": 1,
+        "other": 14
+      },
+      "deliverable": {
+        "files": null,
+        "bytes": null,
+        "lines": null
+      },
+      "finished": "oui",
+      "stopped_by_limit": null,
+      "notes": ""
+    },
+    {
+      "id": "20260822-_12364",
+      "family": "add_feature",
+      "label": "modifier un site web client sur demande",
+      "cold_start": null,
+      "api_calls": 6,
+      "turns": null,
+      "wall_seconds": null,
+      "tokens": {
+        "input": 35293,
+        "output": 1198,
+        "output_floor": null,
+        "cache_read": 237056,
+        "cache_write": 0,
+        "thinking": 0
+      },
+      "tool_calls_by_kind": {
+        "read": 3,
+        "write": 0,
+        "shell": 0,
+        "browser": 0,
+        "search": 0,
+        "other": 9
+      },
+      "deliverable": {
+        "files": null,
+        "bytes": null,
+        "lines": null
+      },
+      "finished": "oui",
+      "stopped_by_limit": null,
+      "notes": ""
+    },
+    {
+      "id": "20260903-_14314",
+      "family": "ops",
+      "label": "deploiement applicatif multi-etapes",
+      "cold_start": null,
+      "api_calls": 72,
+      "turns": null,
+      "wall_seconds": null,
+      "tokens": {
+        "input": 455636,
+        "output": 16139,
+        "output_floor": null,
+        "cache_read": 5022976,
+        "cache_write": 0,
+        "thinking": 0
+      },
+      "tool_calls_by_kind": {
+        "read": 4,
+        "write": 1,
+        "shell": 25,
+        "browser": 0,
+        "search": 2,
+        "other": 44
+      },
+      "deliverable": {
+        "files": null,
+        "bytes": null,
+        "lines": null
+      },
+      "finished": "oui",
+      "stopped_by_limit": null,
+      "notes": ""
+    },
+    {
+      "id": "20260906-_20513",
+      "family": "ops",
+      "label": "operations d'environnement applicatif",
+      "cold_start": null,
+      "api_calls": 19,
+      "turns": null,
+      "wall_seconds": null,
+      "tokens": {
+        "input": 10314,
+        "output": 2092,
+        "output_floor": null,
+        "cache_read": 385024,
+        "cache_write": 0,
+        "thinking": 0
+      },
+      "tool_calls_by_kind": {
+        "read": 1,
+        "write": 0,
+        "shell": 0,
+        "browser": 0,
+        "search": 0,
+        "other": 17
+      },
+      "deliverable": {
+        "files": null,
+        "bytes": null,
+        "lines": null
+      },
+      "finished": "oui",
+      "stopped_by_limit": null,
+      "notes": ""
+    }
+  ],
+  "orchestration": {
+    "applicable": false,
+    "api_calls": null,
+    "tokens": {
+      "input": null,
+      "output": null,
+      "cache_read": null,
+      "cache_write": null
+    },
+    "share_note": "Aucune session pilote de sous-agents detectee dans le corpus deepinfra."
+  },
+  "caveats": [
+    "real_cost indisponible : pas de facture/solde deepinfra lu ; seul cout estime stocke ($3.9537 au total). Le cout estime n'est PAS reproduit exactement par la grille publiee actuelle (ex. Flash-0731 : calcule=1.32 vs estime=1.7355) : les prix ont probablement change et/ou l'estimation a utilise une grille differente. A traiter comme estimation, pas comme cout facture.",
+    "cache_write=0 partout : deepinfra ne declare pas d'ecriture cache dans cette base ; aucun tarif cache_write publie sur la grille locale. Ce n'est pas la preuve d'une ecriture gratuite, c'est une absence de donnee.",
+    "wall_seconds non renseigne : les timestamps started_at/ended_at sont du wall-clock de bout en bout, fortement gonfle par des sessions CLI laissees ouvertes (jusqu'a 25 jours). Non fiable comme temps de travail actif ; machine_wakeups non separe.",
+    "output_floor deduit de la taille du contenu emis (texte assistant + reasoning_content + arguments de tool_calls, divises par 4) sur tout le corpus ; declare (output 422861 + thinking 3404 = 426265) >= plancher 405225, donc pas de sous-declaration evidente. Plancher sur le texte seul, hors contenu de fichiers ecrits (non compte).",
+    "Le corpus est multi-modele (Flash-0731, Flash, Pro-0813, GLM-5.3-Flash, Nemotron) : la grille publiee renseignee est celle du modele dominant et courant. Les totaux agregees melangent des tarifs differents.",
+    "sum(tasks) << totals car tasks = echantillon non-biaise de 12 sessions sur 108 (extremes + deciles) ; il ne vise pas a reproduire les totals."
+  ],
+  "unknown_fields": [
+    "wall_seconds (totals et tasks) : null, timestamps murals non fiables.",
+    "tool_version : null, non releve.",
+    "output_floor par tache : null, non calcule par tache.",
+    "cache_write_5m/1h : null, TTL non distribues par la source.",
+    "real_cost : null, pas de facture.",
+    "deliverable.{files,bytes,lines} : null, non mesure sans lire le contenu (regle confidentialite).",
+    "cold_start, turns : null, non traces dans cette base.",
+    "family=other lorsqu'aucun titre de session ne permettait une classification sure sans lire le contenu."
+  ]
+}
